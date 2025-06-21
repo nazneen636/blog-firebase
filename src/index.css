@@ -1,1 +1,29 @@
 @import "tailwindcss";
+@import "tailwindcss";
+:root {
+  --bg: #ffffff;
+  --text: #1a1a1a;
+  --card-bg: #f9f9f9;
+  --primary: #2563eb;
+}
+
+.dark {
+  --bg: #0e0d0d;
+  --text: #f1f1f1;
+  --card-bg: #2a2a2a;
+  --primary: #facc15;
+}
+.bg-postCard {
+  background-color: var(--primary);
+}
+.bg-theme {
+  background-color: var(--bg);
+}
+
+.text-theme {
+  color: var(--text);
+}
+
+.bg-card-theme {
+  background-color: var(--card-bg);
+}
