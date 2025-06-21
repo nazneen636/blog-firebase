@@ -1,6 +1,5 @@
 import React, { useContext, useState } from "react";
 import { getDatabase, push, ref } from "firebase/database";
-// import { AuthContext } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthProvider";
 import lib from "../../lib/lib";
@@ -59,6 +58,7 @@ const CreatePost = () => {
           className="w-full border p-2 h-40 mb-4 rounded"
         ></textarea>
         <button
+          onClick={handlePost}
           type="submit"
           className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
         >

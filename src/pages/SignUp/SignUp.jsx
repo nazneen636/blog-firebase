@@ -10,14 +10,15 @@ import {
 import { getDatabase, push, ref, set } from "firebase/database";
 
 const SignUp = () => {
-  const inputRef= useRef(null)
+  const inputRef = useRef(null);
   const auth = getAuth();
   const db = getDatabase();
-  const { user, setUser, error, setError, loading, setLoading } = useContext(AuthContext);
+  const { user, setUser, error, setError, loading, setLoading } =
+    useContext(AuthContext);
 
- useEffect(()=>{
-  inputRef.current.focus()
- },[])
+  useEffect(() => {
+    inputRef.current.focus();
+  }, []);
 
   // handle onchange
   const handleChange = (e) => {
@@ -47,7 +48,7 @@ const SignUp = () => {
     setError(newError);
     createUserWithEmailAndPassword(auth, email, password, fullName)
       .then((userInfo) => {
-        setLoading(true)
+        setLoading(true);
         lib.SuccessToast("Registration successfully");
         updateProfile(auth.currentUser, {
           displayName: fullName,
@@ -190,10 +191,8 @@ const SignUp = () => {
                 </div>
               </div>
               {loading ? (
-                <button
-                  class="w-full text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
-                >
-                 Processing....
+                <button class="w-full text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
+                  Processing....
                 </button>
               ) : (
                 <button
